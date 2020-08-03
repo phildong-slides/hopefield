@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
 
-	<title>reveal.js</title>
+    <title>Hopfield Network</title>
 
     <link rel="stylesheet" href="dist/reset.css" />
     <link rel="stylesheet" href="dist/reveal.css" />
@@ -20,21 +20,1006 @@
     <link rel="stylesheet" href="dist/custom.css" />
   </head>
 
-<body>
-	<div class="reveal">
-		<div class="slides">
-			<section>Slide 1</section>
-			<section>
-				<h3>The Lorenz Equations</h3>
-
-				\[\begin{aligned}
-				\dot{x} &amp; = \sigma(y-x) \\
-				\dot{y} &amp; = \rho x - y - xz \\
-				\dot{z} &amp; = -\beta z + xy
-				\end{aligned} \]
-			</section>
-		</div>
-	</div>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-state="changeToWhiteTheme">
+          <h1 class="slide_title">
+            Hopfield Network
+          </h1>
+          <h2 class="slide_subtitle">
+            a tour beyond my pay grade
+          </h2>
+        </section>
+        <section>
+          <h3 class="slide_heading">
+            Random Access Memory
+          </h3>
+          <img src="imgs/ram.png" />
+        </section>
+        <section>
+          <h3 class="slide_heading">
+            Content-addressable Memory
+          </h3>
+          <!-- prettier-ignore -->
+          <cite data-markdown cite="Hopfield 1982">
+            Suppose that an item stored in memory is "H. A. Kramers & G. H.
+            Wannier _Phys. Rev._ **60**, 252 (1941)."...\
+            The input "& Wannier, (1941)" might suffice (to retrieve)...
+          </cite>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Content-addressable Memory
+          </h3>
+          <div class="row">
+            <img src="imgs/apple.svg" width="100px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Content-addressable Memory
+          </h3>
+          <div class="row">
+            <img src="imgs/apple.svg" width="100px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+          <div class="row">
+            <img src="imgs/apple_bite.svg" width="90px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Apple vector
+          </h3>
+          <img src="imgs/apple.svg" width="100px" />
+          <div class="row">
+            <p>
+              $\vec{apple}=\begin{bmatrix} 1\\ 1\\ -1\end{bmatrix}$
+            </p>
+            <p>
+              $=\begin{bmatrix} \text{red}\\ \text{round} \\
+              \text{soft}\end{bmatrix}$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Apple Memory
+          </h3>
+          <div class="row">
+            <img src="imgs/apple.svg" width="100px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+          <div class="row">
+            <p>
+              $\vec{apple}=\begin{bmatrix} 1\\ 1\\ -1\end{bmatrix}$
+            </p>
+            <p>
+              $\longmapsto \vec{apple} = \begin{bmatrix} 1\\ 1\\
+              -1\end{bmatrix}$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Apple Memory
+          </h3>
+          <div class="row">
+            <img src="imgs/apple_bite.svg" width="90px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+          <div class="row">
+            <p>
+              $\vec{apple}_{bitten}=\begin{bmatrix} 0.95\\ 0.8\\
+              -1\end{bmatrix}$
+            </p>
+            <p>
+              $\longmapsto \vec{apple} = \begin{bmatrix} 1\\ 1\\
+              -1\end{bmatrix}$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Apple Memory
+          </h3>
+          <div class="row">
+            <img src="imgs/apple_bite.svg" width="90px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+          <div class="row">
+            <p style="font-size: 0.8em;">
+              $\vec{apple} + \vec{bite}=\begin{bmatrix} 1\\ 1\\ -1\end{bmatrix}
+              + \begin{bmatrix} -0.05\\ -0.2\\ 0\end{bmatrix}$
+            </p>
+            <p style="font-size: 0.8em;">
+              $\longmapsto \vec{apple} = \begin{bmatrix} 1\\ 1\\
+              -1\end{bmatrix}$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Auto-associative Memory
+          </h3>
+          <div class="row">
+            <img src="imgs/apple_bite.svg" width="90px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+          <div class="row">
+            <div>
+              <p>
+                $f: \mathbb{X} \mapsto \mathbb{X}$
+              </p>
+              <p>
+                $f(\vec{x}) = \vec{x}$
+              </p>
+              <p>
+                $f(\vec{x} + \vec{\epsilon}) = \vec{x}$
+              </p>
+            </div>
+            <div
+              class="fragment"
+              style="position: absolute; text-align: left; right: 130px;"
+            >
+              <p>associative</p>
+              <p>auto</p>
+              <p>memory</p>
+            </div>
+          </div>
+          <p class="fragment">
+            And it's content-addressable!
+          </p>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Auto-associative Network
+          </h3>
+          <img src="imgs/network0.svg" width="300px" />
+          <div class="row">
+            <p>$\vec{x} \longmapsto$</p>
+            <p>$f(\vec{x})$</p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Auto-associative Network
+          </h3>
+          <img src="imgs/network1.svg" width="300px" />
+          <div class="row">
+            <p>$f(\vec{x})$</p>
+            <p>$=\mathbf{W} \vec{x}$</p>
+            <p>
+              $=\begin{bmatrix} *&*&*\\ *&*&*\\ *&*&*\end{bmatrix}
+              \begin{bmatrix} 1\\ 1\\ -1 \end{bmatrix}$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Auto-associative Network
+          </h3>
+          <div class="row">
+            <img src="imgs/network2.svg" width="400px" />
+            <div style="padding: 50px;">
+              <div class="row">
+                <p>$f(\vec{x})$</p>
+                <p>$=\mathbf{W} \vec{x}$</p>
+              </div>
+              <p>
+                $\begin{aligned} \vec{x}_1 &= \mathbf{W} \vec{x}_0 \\ \vec{x}_2
+                &= \mathbf{W} \mathbf{W} \vec{x}_0 \\ \vec{x}_3 &= \mathbf{W}
+                \mathbf{W} \mathbf{W} \vec{x}_0 \\ &\cdots \end{aligned}$
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3 class="slide_heading">
+            Eigenvalue and Eigenvectors
+          </h3>
+          <!-- prettier-ignore -->
+          <div data-markdown>
+              Math says if we have:\
+              $$\mathbf{W}\vec{x} = \lambda \vec{x}$$
+              Then $\vec{x}$ is an _eigenvector_ of $\mathbf{W}$,\
+              and $\lambda$ is the corresponding _eigenvalue_.
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Some eigenvectors
+          </h3>
+          <p>
+            Suppose we have: $$\mathbf{W}\vec{round} = 1 \cdot \vec{round}$$
+          </p>
+          <div class="row">
+            <p>$\begin{bmatrix} 0\\ 1\\ 0 \end{bmatrix}$</p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p>$\begin{bmatrix} 0\\ 1\\ 0 \end{bmatrix}$</p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Some eigenvectors
+          </h3>
+          <div class="row">
+            <p>$\begin{bmatrix} 0\\ 1\\ 0 \end{bmatrix}$</p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p>$\begin{bmatrix} 0\\ 1\\ 0 \end{bmatrix}$</p>
+          </div>
+          <div class="row">
+            <p style="font-size: 0.7em; padding-right: 50px;">
+              $$\begin{aligned} \vec{x}_t &= \vec{round} \\ \vec{x}_{t+1} &=
+              \mathbf{W} \vec{round} = \vec{round} \\ \vec{x}_{t+2} &=
+              \mathbf{W} \mathbf{W} \vec{round} = \vec{round} \\ &\cdots
+              \end{aligned}$$
+            </p>
+            <div data-markdown>
+              We get _always round_!
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Some eigenvectors
+          </h3>
+          <p>
+            Suppose we have: $$\mathbf{W}\vec{red} = 3 \cdot \vec{red}$$
+          </p>
+          <div class="row">
+            <p>$\begin{bmatrix} 1\\ 0\\ 0 \end{bmatrix}$</p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p>$\begin{bmatrix} 3\\ 0\\ 0 \end{bmatrix}$</p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Some eigenvectors
+          </h3>
+          <div class="row">
+            <p>$\begin{bmatrix} 1\\ 0\\ 0 \end{bmatrix}$</p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p>$\begin{bmatrix} 3\\ 0\\ 0 \end{bmatrix}$</p>
+          </div>
+          <div class="row">
+            <p style="font-size: 0.7em; padding-right: 50px;">
+              $$\begin{aligned} \vec{x}_t &= \vec{red} \\ \vec{x}_{t+1} &=
+              \mathbf{W} \vec{red} = 3 \cdot \vec{red} \\ \vec{x}_{t+2} &=
+              \mathbf{W} \mathbf{W} \vec{red} = 9 \cdot \vec{red} \\ &\cdots
+              \end{aligned}$$
+            </p>
+            <div data-markdown>
+              We get _extremely red_!
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Decomposing any vector
+          </h3>
+          <p style="font-size: 0.6em;">
+            Suppose we have: $$\begin{aligned}\mathbf{W}\vec{red} &= 3 \cdot
+            \vec{red}\\ \mathbf{W}\vec{round} &= 1 \cdot \vec{round}\\
+            \mathbf{W}\vec{soft} &= 1.5 \cdot \vec{soft}\end{aligned}$$
+          </p>
+          <div class="row">
+            <p style="font-size: 0.6em;">
+              $a\begin{bmatrix} 1\\ 0\\ 0 \end{bmatrix} + b\begin{bmatrix} 0\\
+              1\\ 0 \end{bmatrix} + c\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix}$
+            </p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p style="font-size: 0.6em;">
+              $3a\begin{bmatrix} 1\\ 0\\ 0 \end{bmatrix} + 1b\begin{bmatrix} 0\\
+              1\\ 0 \end{bmatrix} + 1.5c\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix}$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Decomposing any vector
+          </h3>
+          <p style="font-size: 0.6em;">
+            For example: $$\mathbf{W}\vec{apple} =
+            \mathbf{W}(1\cdot\begin{bmatrix}1\\0\\0\end{bmatrix} +
+            1\cdot\begin{bmatrix}0\\1\\0\end{bmatrix} +
+            (-1)\cdot\begin{bmatrix}0\\0\\1\end{bmatrix}) =
+            \begin{bmatrix}3\\1\\-1.5\end{bmatrix}$$
+          </p>
+          <div class="row">
+            <p style="font-size: 0.6em;">
+              $a\begin{bmatrix} 1\\ 0\\ 0 \end{bmatrix} + b\begin{bmatrix} 0\\
+              1\\ 0 \end{bmatrix} + c\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix}$
+            </p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p style="font-size: 0.6em;">
+              $3a\begin{bmatrix} 1\\ 0\\ 0 \end{bmatrix} + 1b\begin{bmatrix} 0\\
+              1\\ 0 \end{bmatrix} + 1.5c\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix}$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Decomposing any vector
+          </h3>
+          <div class="row">
+            <p style="font-size: 0.6em;">
+              $a\begin{bmatrix} 1\\ 0\\ 0 \end{bmatrix} + b\begin{bmatrix} 0\\
+              1\\ 0 \end{bmatrix} + c\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix}$
+            </p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p style="font-size: 0.6em;">
+              $3a\begin{bmatrix} 1\\ 0\\ 0 \end{bmatrix} + 1b\begin{bmatrix} 0\\
+              1\\ 0 \end{bmatrix} + 1.5c\begin{bmatrix} 0\\ 0\\ 1 \end{bmatrix}$
+            </p>
+          </div>
+          <div class="row">
+            <p style="font-size: 0.6em;">
+              $\begin{aligned}\vec{x}_0 &= a\cdot\vec{red} + b\cdot\vec{round} +
+              c\cdot\vec{soft}\\ \vec{x}_1 = \mathbf{W}\vec{x}_0 &=
+              3a\cdot\vec{red} + 1b\cdot\vec{round} + 1.5c\cdot\vec{soft}\\
+              \vec{x}_2 = \mathbf{W}\mathbf{W}\vec{x}_0 &= 3^2a\cdot\vec{red} +
+              1^2b\cdot\vec{round} + 1.5^2c\cdot\vec{soft}\\\cdots&\cdots\\
+              \vec{x}_{1000} = \mathbf{W}\cdots\mathbf{W}\vec{x}_0 &=
+              3^{1000}a\cdot\vec{red} + 1^{1000}b\cdot\vec{round} +
+              1.5^{1000}c\cdot\vec{soft}\\&\approx
+              3^{1000}a\cdot\vec{red}\end{aligned}$
+            </p>
+            <div>
+              <p>Everything is</p>
+              <p style="color: red; font-size: 0.8em;">
+                $\begin{bmatrix}\text{red}\\ 0\\ 0\end{bmatrix}$
+              </p>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            An apple attractor
+          </h3>
+          <div class="row">
+            <p style="font-size: 0.7em;">
+              Now what if we have: $$\begin{aligned}\mathbf{W}\vec{apple} &= 3
+              \cdot \vec{apple}\\ \mathbf{W}\vec{elmo} &= 1 \cdot \vec{elmo}\\
+              \mathbf{W}\vec{yolk} &= 1.5 \cdot \vec{yolk}\end{aligned}$$
+            </p>
+            <div class="fragment" style="position: absolute; right: 20px;">
+              <img src="imgs/elmo.jpg" width="150px" />
+              <p style="font-size: 0.5em;">Thank you Lingxuan and Lucia!</p>
+            </div>
+          </div>
+          <div class="row">
+            <p style="font-size: 0.6em;">
+              $a\begin{bmatrix} 1\\ 1\\ -1 \end{bmatrix} + b\begin{bmatrix} 1\\
+              -1\\ 1 \end{bmatrix} + c\begin{bmatrix} -1\\ 1\\ 1 \end{bmatrix}$
+            </p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p style="font-size: 0.6em;">
+              $3a\begin{bmatrix} 1\\ 1\\ -1 \end{bmatrix} + 1b\begin{bmatrix}
+              1\\ -1\\ 1 \end{bmatrix} + 1.5c\begin{bmatrix} -1\\ 1\\ 1
+              \end{bmatrix}$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            An apple attractor
+          </h3>
+          <div class="row">
+            <p style="font-size: 0.6em;">
+              $a\begin{bmatrix} 1\\ 1\\ -1 \end{bmatrix} + b\begin{bmatrix} 1\\
+              -1\\ 1 \end{bmatrix} + c\begin{bmatrix} -1\\ 1\\ 1 \end{bmatrix}$
+            </p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p style="font-size: 0.6em;">
+              $3a\begin{bmatrix} 1\\ 1\\ -1 \end{bmatrix} + 1b\begin{bmatrix}
+              1\\ -1\\ 1 \end{bmatrix} + 1.5c\begin{bmatrix} -1\\ 1\\ 1
+              \end{bmatrix}$
+            </p>
+          </div>
+          <div class="row">
+            <p style="font-size: 0.6em; padding-right: 20px;">
+              $\begin{aligned}\vec{x}_0 &= a\cdot\vec{apple} + b\cdot\vec{elmo}
+              + c\cdot\vec{yolk}\\ \vec{x}_1 &= 3a\cdot\vec{apple} +
+              1b\cdot\vec{elmo} + 1.5c\cdot\vec{yolk}\\ \vec{x}_2 &=
+              3^2a\cdot\vec{apple} + 1^2b\cdot\vec{elmo} +
+              1.5^2c\cdot\vec{yolk}\\\cdots&\cdots\\ \vec{x}_{1000} &=
+              3^{1000}a\cdot\vec{apple} + 1^{1000}b\cdot\vec{elmo} +
+              1.5^{1000}c\cdot\vec{yolk}\\&\approx
+              3^{1000}a\cdot\vec{apple}\end{aligned}$
+            </p>
+            <div>
+              <p>Everything is $\vec{apple}$</p>
+              <p>Except $\vec{elmo}$ and $\vec{yolk}$</p>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            An apple attractor
+          </h3>
+          <div class="row">
+            <p style="font-size: 0.6em;">
+              $a\cdot\vec{apple} + b\cdot\vec{elmo} + c\cdot\vec{yolk}$
+            </p>
+            <img src="imgs/network3.svg" width="450px" />
+            <p style="font-size: 0.6em;">
+              $3a\cdot\vec{apple} + 1b\cdot\vec{elmo} + 1.5c\cdot\vec{yolk}$
+            </p>
+          </div>
+          <div class="row">
+            <img src="imgs/apple.svg" width="100px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+          <div class="row fragment">
+            <img src="imgs/apple_bite.svg" width="90px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+          <div class="row fragment">
+            <img src="imgs/sausage.svg" width="90px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+        </section>
+        <section>
+          <h3 class="slide_heading">
+            Some problem
+          </h3>
+          <ul>
+            <li>
+              Is $\vec{apple}$ same as $1000000\cdot\vec{apple}$?
+            </li>
+            <li>
+              Do "cell activities" actually goes to $1000000$?
+            </li>
+            <li>
+              Can we "remember" something other than $\vec{apple}$?
+            </li>
+          </ul>
+          <p class="fragment">
+            We want: $$\begin{aligned} \vec{apple} &\mapsto \vec{apple}\\
+            \vec{apple}_{bitten} &\mapsto \vec{apple} \end{aligned}$$ Not
+            $3\cdot\vec{apple}$!!
+          </p>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Take the $sign$!
+          </h3>
+          <!-- prettier-ignore-->
+          <p>
+            $\begin{aligned}
+            sign(\mathbf{W}\vec{apple}) &= sign(3\cdot\vec{apple})\\
+            &=sign(\begin{bmatrix}3\\3\\-3\end{bmatrix})
+            =\begin{bmatrix}1\\1\\-1\end{bmatrix}\\
+            &=\vec{apple}\end{aligned}$
+          </p>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Take the $sign$!
+          </h3>
+          <!-- prettier-ignore-->
+          <p style="font-size: 0.7em;">
+            $\begin{aligned}
+            \vec{apple}_{bitten} &= \begin{bmatrix}0.95\\0.8\\-1\end{bmatrix}\\
+            &= 0.875 \begin{bmatrix}1\\1\\-1\end{bmatrix}
+            + (-0.025) \begin{bmatrix}1\\-1\\1\end{bmatrix}
+            + (-0.1) \begin{bmatrix}-1\\1\\1\end{bmatrix}\\
+            &= 0.875\cdot\vec{apple} + (-0.025)\cdot\vec{elmo} +
+            (-0.1)\cdot\vec{yolk}
+            \end{aligned}$
+          </p>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Take the $sign$!
+          </h3>
+          <!-- prettier-ignore-->
+          <p style="font-size: 0.7em;">
+            $\vec{apple}_{bitten} = 0.875\cdot\vec{apple} +
+            (-0.025)\cdot\vec{elmo} + (-0.1)\cdot\vec{yolk}$
+          </p>
+          <!-- prettier-ignore-->
+          <p style="font-size: 0.7em;" class='fragment'>
+            $\begin{aligned}
+            \mathbf{W}\vec{apple}_{bitten}&=3\cdot0.875\cdot\vec{apple}
+            +1\cdot(-0.025)\cdot\vec{elmo}+1.5\cdot(-0.1)\cdot\vec{yolk}\\
+            &=2.625\begin{bmatrix}1\\1\\-1\end{bmatrix}
+            +(-0.025)\begin{bmatrix}1\\-1\\1\end{bmatrix}
+            +(-0.15)\begin{bmatrix}-1\\1\\1\end{bmatrix}\\
+            &=\begin{bmatrix}2.75\\2.5\\-2.8\end{bmatrix} \end{aligned}$
+          </p>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Take the $sign$!
+          </h3>
+          <!-- prettier-ignore-->
+          <p style="font-size: 0.7em;">
+            $\vec{apple}_{bitten} = 0.875\cdot\vec{apple} +
+            (-0.025)\cdot\vec{elmo} + (-0.1)\cdot\vec{yolk}$
+          </p>
+          <!-- prettier-ignore-->
+          <p style="font-size: 0.7em;">
+            $\mathbf{W}\vec{apple}_{bitten}=
+            \begin{bmatrix}2.75\\2.5\\-2.8\end{bmatrix}$
+          </p>
+          <!-- prettier-ignore-->
+          <p style="font-size: 0.7em;" class="fragment">
+            $\begin{aligned}
+            sign(\mathbf{W}\vec{apple}_{bitten})&=sign(
+            \begin{bmatrix}2.75\\2.5\\-2.8\end{bmatrix})\\
+            &=\begin{bmatrix}1\\1\\-1\end{bmatrix}\\
+            &=\vec{apple}
+            \end{aligned}$
+          </p>
+        </section>
+        <section>
+          <h3 class="slide_heading">
+            Some problem
+          </h3>
+          <ul>
+            <li style="color: darkgray;">
+              Is $\vec{apple}$ same as $1000000\cdot\vec{apple}$?
+            </li>
+            <li style="color: darkgray;">
+              Do "cell activities" actually goes to $1000000$?
+            </li>
+            <li>
+              Can we "remember" something other than $\vec{apple}$?
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Saving dirty Elmo with $sign$
+          </h3>
+          <p style="font-size: 0.7em;">
+            $\vec{elmo}_{dirty} = \begin{bmatrix}0.8\\-1\\1\end{bmatrix}
+            =(-0.1)\cdot\vec{apple} + (0.9)\cdot\vec{elmo} + (0)\cdot\vec{yolk}$
+          </p>
+          <p style="font-size: 0.7em;" class="fragment">
+            $\mathbf{W}\vec{elmo}_{dirty} = (-0.3)\cdot\vec{apple} +
+            (0.9)\cdot\vec{elmo} + (0)\cdot\vec{yolk}
+            =\begin{bmatrix}0.6\\-1.2\\1.2\end{bmatrix}$
+          </p>
+          <div class="row fragment">
+            <p style="font-size: 0.7em;">
+              $sign(\mathbf{W}\vec{elmo}_{dirty})
+              =\begin{bmatrix}1\\-1\\1\end{bmatrix} =\vec{elmo}$
+            </p>
+            <img
+              src="imgs/elmo.jpg"
+              width="100px"
+              style="padding-left: 100px;"
+            />
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Saving dirty Elmo with $sign$
+          </h3>
+          <p style="font-size: 0.7em;">
+            $\mathbf{W}\vec{elmo}_{dirty} = (-0.3)\cdot\vec{apple} +
+            (0.9)\cdot\vec{elmo} + (0)\cdot\vec{yolk}
+            =\begin{bmatrix}0.6\\-1.2\\1.2\end{bmatrix}$
+          </p>
+          <p>
+            Had we kept going without taking the $sign$...
+          </p>
+          <div class="fragment">
+            <!-- prettier-ignore-->
+            <p style="font-size: 0.7em;">
+              $\begin{aligned}
+              \mathbf{W}\mathbf{W}\vec{elmo}_{dirty} &= (-0.9)\cdot\vec{apple}
+              + (0.9)\cdot\vec{elmo} + (0)\cdot\vec{yolk}\\
+              \mathbf{W}\mathbf{W}\mathbf{W}\vec{elmo}_{dirty}
+              &= (-2.7)\cdot\vec{apple} + (0.9)\cdot\vec{elmo}
+              +(0)\cdot\vec{yolk}\\
+              \cdots&\cdots
+              \end{aligned}$
+            </p>
+            <img src="imgs/apple_neg.jpg" width="150px" />
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Nonlinearity is the key
+          </h3>
+          <div class="row">
+            <div>
+              <p>hard snap</p>
+              <img src="imgs/sign.svg" width="450" />
+            </div>
+            <div style="width: 100px;"></div>
+            <div>
+              <p>soft bound</p>
+              <img src="imgs/fig1.png" width="450" />
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Nonlinearity is the key
+          </h3>
+          <div class="row">
+            <img src="imgs/fig1.png" width="450" />
+            <div style="width: 100px;"></div>
+            <!-- prettier-ignore-->
+            <p>
+              We have effectively created:
+              $$\begin{aligned}
+              \mathbf{W}\vec{apple} &\mapsto 1\cdot\vec{apple}\\
+              \mathbf{W}\vec{elmo} &\mapsto 1\cdot\vec{elmo}\\
+              \mathbf{W}\vec{yolk} &\mapsto 1\cdot\vec{yolk}
+              \end{aligned}$$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Nonlinearity is the key
+          </h3>
+          <div class="row">
+            <img src="imgs/fig1.png" width="450" />
+            <div style="width: 100px;"></div>
+            <cite cite="Hopfield 1982" style="zoom: 90%;">
+              Our model, in contrast, will use its strong nonlinearity to make
+              choices, produce categories, and regenerate information...
+            </cite>
+          </div>
+        </section>
+        <section>
+          <h3 class="slide_heading">
+            What we have accomplished
+          </h3>
+          <div class="row">
+            <img src="imgs/apple.svg" width="100px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+          <div class="row">
+            <img src="imgs/apple_bite.svg" width="90px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/apple_abstract.svg" width="100px" />
+          </div>
+          <div class="row">
+            <img src="imgs/elmo_blue.png" width="100px" />
+            <img src="imgs/memory.svg" width="400px" />
+            <img src="imgs/elmo.jpg" width="90px" />
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Some problem
+          </h3>
+          <ul>
+            <li style="color: darkgray;">
+              Is $\vec{apple}$ same as $1000000\cdot\vec{apple}$?
+            </li>
+            <li style="color: darkgray;">
+              Do "cell activities" actually goes to $1000000$?
+            </li>
+            <li style="color: darkgray;">
+              Can we "remember" something other than $\vec{apple}$?
+            </li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Some more problem
+          </h3>
+          <ul>
+            <li style="color: darkgray;">
+              Is $\vec{apple}$ same as $1000000\cdot\vec{apple}$?
+            </li>
+            <li style="color: darkgray;">
+              Do "cell activities" actually goes to $1000000$?
+            </li>
+            <li style="color: darkgray;">
+              Can we "remember" something other than $\vec{apple}$?
+            </li>
+            <li>How do I know when to stop?</li>
+            <li>Do we need a synchronous clock?</li>
+          </ul>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Smash those two layers!
+          </h3>
+          <div class="row">
+            <img src="imgs/network5.svg" width="400px" />
+            <div style="width: 30px;"></div>
+            <img src="imgs/network_single.svg" width="200px" />
+          </div>
+          <!--prettier-ignore-->
+          <p>
+            $\vec{x}_{t+1} = sign(\mathbf{W}\vec{x}_t)
+            \quad\text{where}\quad
+            \mathbf{W} = \begin{bmatrix}
+            0 & * & * \\
+            * & 0 & * \\
+            * & * & 0
+            \end{bmatrix}
+            $
+          </p>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            When does the network converge?
+          </h3>
+          <div class="row">
+            <img src="imgs/network_single.svg" width="200px" />
+            <div style="width: 100px;"></div>
+            <div>
+              <p style="font-size: 0.8em;">
+                $\vec{x}_t = \begin{bmatrix}1\\1\\1\end{bmatrix} \quad
+                \mathbf{W}\vec{x}_t = \begin{bmatrix}0.8\\1.2\\2.2\end{bmatrix}$
+              </p>
+              <div style="height: 30px;"></div>
+              <!--prettier-ignore-->
+              <p data-markdown style="font-size: 0.8em;">
+                The network converges\
+                when the current state:\
+                $\vec{x}_t$\
+                and the "pre-synaptic" input\
+                for the next state:\
+                $\mathbf{W}\vec{x}_t$\
+                **agree**!
+              </p>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Degree of agreement: dot product
+          </h3>
+          <div class="row">
+            <img src="imgs/network_single.svg" width="200px" />
+            <div style="width: 50px;"></div>
+            <div>
+              <div>
+                <p style="font-size: 0.8em;">
+                  $\vec{x}_t = \begin{bmatrix}1\\1\\1\end{bmatrix} \quad
+                  \mathbf{W}\vec{x}_t =
+                  \begin{bmatrix}0.8\\1.2\\2.2\end{bmatrix}$
+                </p>
+                <p>
+                  $\vec{x}_t^\intercal\mathbf{W}\vec{x}_t = 4.2 \quad
+                  \text{agree!}$
+                </p>
+              </div>
+              <div style="height: 50px;"></div>
+              <div class="fragment">
+                <p style="font-size: 0.8em;">
+                  $\vec{x}_t = \begin{bmatrix}1\\-1\\1\end{bmatrix} \quad
+                  \mathbf{W}\vec{x}_t =
+                  \begin{bmatrix}0.8\\1.2\\-2.2\end{bmatrix}$
+                </p>
+                <p>
+                  $\vec{x}_t^\intercal\mathbf{W}\vec{x}_t = -2.6 \quad
+                  \text{disagree!}$
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            The energy function
+          </h3>
+          <div class="row">
+            <img src="imgs/network_single.svg" width="200px" />
+            <div style="width: 100px;"></div>
+            <div>
+              <p>
+                $E(\vec{x}_t) =
+                -\frac{1}{2}\vec{x}_t^\intercal\mathbf{W}\vec{x}_t$
+              </p>
+              <p>definded for each state</p>
+            </div>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Ising model
+          </h3>
+          <div class="row">
+            <img src="imgs/mag_field.png" width="250px" />
+            <div style="width: 100px;"></div>
+            <img src="imgs/ising.png" width="400px" />
+          </div>
+          <div class="rfooter">
+            Wald, Sascha. (2017)
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Ising model
+          </h3>
+          <div class="row">
+            <img src="imgs/ising.png" width="400px" />
+            <div style="width: 100px;"></div>
+            <img src="imgs/network_single.svg" width="150px" />
+          </div>
+          <div class="row fragment">
+            <cite cite="Hopfield 1982" style="zoom: 80%;">
+              This case is isomorphic with an Ising model. $T_{ij}$ provides the
+              role of the exchange coupling...</cite
+            >
+            <div style="width: 100px;"></div>
+            <p>
+              $\vec{x}_{t+1} = sign(\mathbf{W}\vec{x}_t)$
+            </p>
+          </div>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Stochastic - take it one at a time
+          </h3>
+          <div class="row">
+            <img src="imgs/network_single.svg" width="150px" />
+            <div style="width: 100px;"></div>
+            <div>
+              <!--prettier-ignore-->
+              <p style="font-size: 0.6em;">
+                $\begin{aligned}
+                \vec{x}_t &= \begin{bmatrix}1\\1\\1\end{bmatrix}
+                \; &\mathbf{W}\vec{x}_t &=
+                \begin{bmatrix}0.8\\1.2\\2.2\end{bmatrix}
+                \; &E&=-\frac{1}{2}\cdot4.2\\
+                \vec{x}_t &= \begin{bmatrix}1\\-1\\1\end{bmatrix}
+                \; &\mathbf{W}\vec{x}_t &=
+                \begin{bmatrix}0.8\\1.2\\-2.2\end{bmatrix}
+                \; &E&=-\frac{1}{2}\cdot(-2.6)
+                \end{aligned}$
+              </p>
+              <div style="height: 10px;"></div>
+              <p data-markdown>Keep the _round_ neuron at $1$!</p>
+            </div>
+          </div>
+          <cite
+            class="fragment"
+            data-markdown
+            cite="Hopfield 1982"
+            style="zoom: 70%;"
+          >
+            Thus, the algorithm for altering (activities) $V_i$ causes $E$ to be
+            a monotonically decreasing function. State changes will continue
+            until a least (local) $E$ is reached.
+          </cite>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Stochastic - take it one at a time
+          </h3>
+          <cite data-markdown cite="Hopfield 1982" style="zoom: 70%;">
+            Thus, the algorithm for altering (activities) $V_i$ causes $E$ to be
+            a monotonically decreasing function. State changes will continue
+            until a least (local) $E$ is reached.
+          </cite>
+          <div class="row">
+            <img src="imgs/flip.svg" width="300px" />
+            <div style="width: 100px;"></div>
+            <img src="imgs/flip_energy.svg" width="300px" />
+          </div>
+          <div class="rfooter">Rojas, Raul. (1996)</div>
+        </section>
+        <section data-state="changeToWhiteTheme">
+          <h3 class="slide_heading">
+            Problem solved
+          </h3>
+          <ul>
+            <li style="color: darkgray;">
+              Is $\vec{apple}$ same as $1000000\cdot\vec{apple}$?
+            </li>
+            <li style="color: darkgray;">
+              Do "cell activities" actually goes to $1000000$?
+            </li>
+            <li style="color: darkgray;">
+              Can we "remember" something other than $\vec{apple}$?
+            </li>
+            <li style="color: darkgray;">How do I know when to stop?</li>
+            <li style="color: darkgray;">Do we need a synchronous clock?</li>
+          </ul>
+        </section>
+        <section data-state="changeToBlackTheme" data-auto-animate>
+          <h3 class="slide_heading">
+            The home stretch
+          </h3>
+          <video
+            src="python/media/videos/scene/1440p60/ScnRaw.mp4"
+            controls
+            loop
+          ></video>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Linear update
+          </h3>
+          <video
+            src="python/media/videos/scene/1440p60/ScnLinear.mp4"
+            controls
+          ></video>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Taking the $sign$
+          </h3>
+          <video
+            src="python/media/videos/scene/1440p60/ScnSign.mp4"
+            controls
+          ></video>
+        </section>
+        <section data-auto-animate>
+          <h3 class="slide_heading">
+            Stochastic update
+          </h3>
+          <video
+            src="python/media/videos/scene/1440p60/ScnStochastic.mp4"
+            controls
+          ></video>
+        </section>
+        <section data-state="changeToBlackTheme" data-auto-animate>
+          <h3 class="slide_heading">
+            The stretch
+          </h3>
+          <video
+            src="python/media/videos/scene/1440p60/ScnBall.mp4"
+            controls
+          ></video>
+        </section>
+        <section data-state="changeToWhiteTheme">
+          <h3 class="slide_heading">
+            Some more take-home
+          </h3>
+          <!--prettier-ignore-->
+          <cite cite="Hopfield 1982" style="zoom: 90%;" data-markdown>
+            - _The phase space flow is apparently dominated by attractors which
+            are the nominally assigned memories_, each of which dominates a
+            substantial region around it. The flow is not entirely
+            deterministic, and _the system responds to an ambiguous starting
+            state by a statistical choice_ between the memory states it most
+            resembles.
+            - About $0.15 N$ states can be simultaneously remembered
+            before error in recall is severe.
+          </cite>
+        </section>
+        <section>
+          <h3 class="slide_heading">
+            Discussions
+          </h3>
+          <ul>
+            <li>Can memory be fully defined by a function?</li>
+            <li>Does the brain actually converge?</li>
+            <li data-markdown>
+              What if the brain converge not to state vectors, but _dynamics_ of
+              state vectors?
+            </li>
+            <li>Are there really no synchronous clock?</li>
+            <li>How about encoding/updating?</li>
+          </ul>
+        </section>
+        <section>
+          <h3 class="slide_heading">
+            Thank you for tuning in!
+          </h3>
+        </section>
+      </div>
+    </div>
 
     <script src="dist/reveal.js"></script>
     <script src="plugin/notes/notes.js"></script>
