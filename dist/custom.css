@@ -1,6 +1,80 @@
-.multicol{
-    display: flex;
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-.col{
-    flex: 1;
+.iframe-container {
+  overflow: hidden;
+  padding-top: 56.25%;
+  position: relative;
+}
+.iframe-container iframe {
+  border: 0;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+h1.slide_title {
+  font-size: 2.5em;
+}
+h2.slide_subtitle {
+  font-size: 1.6em;
+  color: gray;
+}
+h2.slide_author {
+  font-size: 1.3em;
+  text-align: right;
+  color: darkgray;
+}
+h3.slide_heading {
+  font-size: 1.3em;
+  text-transform: capitalize;
+}
+cite {
+  display: block;
+  border-width: 2px 0;
+  border-style: solid;
+  border-color: #eee;
+  padding: 2em 0 0.5em;
+  margin: 1.5em 1.5em;
+  position: relative;
+  text-align: left;
+  font-size: 0.8em;
+}
+cite:before {
+  content: "\201C";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 3rem;
+  height: 2rem;
+  font: 6em/1.08em "PT Sans", sans-serif;
+  color: #666;
+  text-align: center;
+}
+cite:after {
+  content: "\2013 \2003"attr(cite);
+  display: block;
+  text-align: right;
+  font-size: 0.875em;
+  color: #e74c3c;
+}
+img {
+  vertical-align: middle;
+}
+.rfooter {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-size: 0.5em;
+}
+.lfooter {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  font-size: 0.5em;
 }
