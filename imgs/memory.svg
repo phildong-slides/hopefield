@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
+   sodipodi:docname="memory.svg"
+   id="svg1043"
+   content="&lt;mxfile host=&quot;Electron&quot; modified=&quot;2020-05-25T18:21:46.851Z&quot; agent=&quot;5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.0.3 Chrome/80.0.3987.163 Electron/8.2.1 Safari/537.36&quot; version=&quot;13.0.3&quot; etag=&quot;XZ6YSJvo4iQCjtp_4okj&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;4KIewPkZTlE3T6WVfZ25&quot;&gt;zVXLbtswEPwaXQuJtNT42DpOejEaVIeiR1ZcSUQpUaDoSO7Xl4yWetpIECBADR/I2Qe5M0M7oIeqf9SsKU+KgwxIyPuA3geERDtCAvcN+WVA7uJwAAotOCZNQCr+AoI+7Sw4tItEo5Q0olmCmapryMwCY1qrbpmWK7k8tWEFbIA0Y3KL/hTclKspHP4NRFH6k6MQIxXzyQi0JeOqm0H0GNCDVsoMq6o/gHTkeV6Guocb0fFiGmrzlgIU4pnJM852Op6+//iFtzMXP7JW55qDq4oC+rUrhYG0YZmLdlZki5WmkhjOhZQHJZV+qaV5npMss3hrtPoDswhPfidxMkY8mcT1ULVJ8fzQ7wcnELcvJGtbjOEQoA30N4mIRnqtL0FVYPTFpmABTVARtOTOS9ZNAkdetXImrq9j6KlibD3RbhfI/HUV6EaFDf/WKI1b5hL6L87CdmyoOS7vM8eGyFYyrChrrWCiLpBgw3QB5gm0sPcFnY7B8KoerTrrDG6kD9cFvnk2r9I/oze+wq7HNEhmxPOy/TXK8YQnJezBk7rhSl26Ug2nG6rm72XdKF41IvtPn5NlLyR23evFBOPkb/LF7mN8ceOxzZzyv+u5229luCP76fM+dePdKzZ5t7R2O/2oD+nTXyM9/gM=&lt;/diagram&gt;&lt;/mxfile&gt;"
+   viewBox="-0.5 -0.5 250.02994 62"
+   height="62"
+   width="250.02994"
+   version="1.1">
+  <metadata
+     id="metadata1047">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="svg1043"
+     fit-margin-bottom="0"
+     fit-margin-top="0"
+     fit-margin-right="5"
+     fit-margin-left="5"
+     showgrid="false"
+     id="namedview1045"
+     inkscape:window-height="480"
+     inkscape:window-width="640"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs1019" />
+  <g
+     transform="translate(4.5299995,-0.5)"
+     id="g1033">
+    <rect
+       id="rect1021"
+       pointer-events="all"
+       stroke-width="2"
+       stroke="#d6b656"
+       fill="#fff2cc"
+       ry="9"
+       rx="9"
+       height="60"
+       width="120"
+       y="1"
+       x="60" />
+    <g
+       id="g1027"
+       transform="translate(-0.5,-0.5)">
+      <switch
+         id="switch1025">
+        <foreignObject
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           height="100%"
+           width="100%"
+           pointer-events="none"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 31px; margin-left: 61px;">
+            <xhtml:div
+               style="box-sizing: border-box; font-size: 0; text-align: center; ">
+              <xhtml:div
+                 style="display: inline-block; font-size: 20px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">MEMORY</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           id="text1023"
+           text-anchor="middle"
+           font-size="20px"
+           font-family="Helvetica"
+           fill="#000000"
+           y="37"
+           x="120">MEMORY</text>
+      </switch>
+    </g>
+    <path
+       id="path1029"
+       pointer-events="all"
+       stroke-miterlimit="10"
+       stroke-linejoin="round"
+       stroke-width="2"
+       stroke="#000000"
+       fill="none"
+       d="m 1.03,36.5 -0.06,-11 28,-0.14 -0.05,-11 20.08,16.4 -19.92,16.6 -0.05,-11 z" />
+    <path
+       id="path1031"
+       pointer-events="all"
+       stroke-miterlimit="10"
+       stroke-linejoin="round"
+       stroke-width="2"
+       stroke="#000000"
+       fill="none"
+       d="m 190.98,36.33 0.04,-11 28,0.1 0.04,-11 L 239,31 l -20.06,16.43 0.04,-11 z" />
+  </g>
+  <switch
+     transform="translate(4.5299995,-0.5)"
+     id="switch1041">
+    <g
+       id="g1035"
+       requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" />
+    <a
+       id="a1039"
+       target="_blank"
+       xlink:href="https://desk.draw.io/support/solutions/articles/16000042487"
+       transform="translate(0,-5)">
+      <text
+         id="text1037"
+         y="100%"
+         x="50%"
+         font-size="10px"
+         text-anchor="middle">Viewer does not support full SVG 1.1</text>
+    </a>
+  </switch>
+</svg>

@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:xhtml="http://www.w3.org/1999/xhtml"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (6e3e5246a0, 2020-05-07)"
+   sodipodi:docname="network_single.svg"
+   id="svg62"
+   content="&lt;mxfile host=&quot;Electron&quot; modified=&quot;2020-05-27T03:11:03.142Z&quot; agent=&quot;5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/13.0.3 Chrome/80.0.3987.163 Electron/8.2.1 Safari/537.36&quot; version=&quot;13.0.3&quot; etag=&quot;0GpPLxAP7JNBravZAXZN&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;WsIY1hlambItQa2cgHxV&quot;&gt;7VjJbtswEP0aXw1SFCXn2GZpUbRAgRyaHBmLsdjSokBRXvr1pSRSohbbspMoCNBLwnmc4TLzZobWDF2vd18kSeMfIqJ85oFoN0M3M88LwlD/LYB9BfgAV8BKsqiCYAPcs7/UgMCgOYto1lJUQnDF0ja4FElCl6qFESnFtq32LHh715SsaA+4XxLeR3+xSMUVusCgwb9StortzhCYmTWxygbIYhKJrQOh2xm6lkKoarTeXVNe+M76pbK7OzBbH0zSRI0x8Mwx1N7ejUb6qkZMRKL/fZYiTyJaWAAtCalisRIJ4d+FSDUINfibKrU3gSK5EhqK1ZqbWbpj6sGYF+NHZ3yzc4W9FRIl9w+u8GjXKoTGqJQaq+hTEV4tipQmFXLHODfzmSJSWQ1zuRJzdCqHFF5ouTQTuVwayJBVG66o8bLfdzysw6nTgIo11SfVKpJyotimvToxhFzVerXpT8H0ih4wueP7hjkmdZClll2iOpWxaiKvB84xGqjkwzA30KTcgA434DhuQJcb4IXcGBF3vx93PF3c8XyBw0XgozDwgitbMS0NguHp12eFccKG8NzcRerw95jCuS7GBUG2MVP0PiWlE7e6HbTDT7K0qtDPbFfQSOejFH/qsurVkdlQqejuYJk74HVj4C3aWVPL26Z828SKncrtg8NxavnwiMNw32FFznw0l6FgOpcFPZdl4ll9NI/VpXoCj4X/a/XJHh1MVauRD+YAeBDhwEMhAldBmxdgeNpuUF2jV6vP3gbDeQidltDZ5vVawmJS8r33I3IE+YJ3fCggz59D32EF7pBvePps8p3YBrffI/DNyHfV6xV9NvYieqKmgTm+pKpVVseo5aRFkwG3DdqhGuVP5amLtsT0z08NLXO5KbOo7GvJMhay9OINk7rFMZGYqSe9EnkqdyrERHzL1+l4Bg88dceXT6ff4YF+Z7GXEh13HiiLTh8dS2UfdBZC435SaU6RvaOWFgrZGQcG4Oi5uvp+0NLXg+oEl2aO/ZpyeeoM1tcPkwaDDeVE5l9W/Md/HZgmdbygwyx4YerA7pMXv03qeMdT4aR+J9XOTR0tNp/kKvXmuya6/Qc=&lt;/diagram&gt;&lt;/mxfile&gt;"
+   viewBox="-0.5 -0.5 101 202"
+   height="202"
+   width="101"
+   version="1.1">
+  <metadata
+     id="metadata66">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="svg62"
+     fit-margin-bottom="0"
+     fit-margin-right="0"
+     fit-margin-left="0"
+     fit-margin-top="0"
+     showgrid="false"
+     id="namedview64"
+     inkscape:window-height="480"
+     inkscape:window-width="640"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs2" />
+  <g
+     transform="translate(0,-0.5)"
+     id="g52">
+    <path
+       id="path4"
+       pointer-events="stroke"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 36.03,86.69 V 37.55" />
+    <path
+       id="path6"
+       pointer-events="all"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="m 39.53,43.43 -3.5,-7 -3.5,7" />
+    <path
+       id="path8"
+       pointer-events="stroke"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 64.14,35.14 V 84.62" />
+    <path
+       id="path10"
+       pointer-events="all"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="m 60.64,78.74 3.5,7 3.5,-7" />
+    <circle
+       r="20"
+       id="ellipse12"
+       pointer-events="all"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffffff"
+       cy="21"
+       cx="50" />
+    <g
+       id="g18"
+       transform="translate(-0.5,-0.5)">
+      <switch
+         id="switch16">
+        <foreignObject
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           height="100%"
+           width="100%"
+           pointer-events="none"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 21px; margin-left: 31px;">
+            <xhtml:div
+               style="box-sizing: border-box; font-size: 0; text-align: center; ">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">red</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           id="text14"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           fill="#000000"
+           y="25"
+           x="50">red</text>
+      </switch>
+    </g>
+    <circle
+       r="20"
+       id="ellipse20"
+       pointer-events="all"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffffff"
+       cy="101"
+       cx="50" />
+    <g
+       id="g26"
+       transform="translate(-0.5,-0.5)">
+      <switch
+         id="switch24">
+        <foreignObject
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           height="100%"
+           width="100%"
+           pointer-events="none"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 101px; margin-left: 31px;">
+            <xhtml:div
+               style="box-sizing: border-box; font-size: 0; text-align: center; ">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">round</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           id="text22"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           fill="#000000"
+           y="105"
+           x="50">round</text>
+      </switch>
+    </g>
+    <circle
+       r="20"
+       id="ellipse28"
+       pointer-events="all"
+       stroke-width="2"
+       stroke="#000000"
+       fill="#ffffff"
+       cy="181"
+       cx="50" />
+    <g
+       id="g34"
+       transform="translate(-0.5,-0.5)">
+      <switch
+         id="switch32">
+        <foreignObject
+           requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"
+           height="100%"
+           width="100%"
+           pointer-events="none"
+           style="overflow: visible; text-align: left;">
+          <xhtml:div
+             style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 38px; height: 1px; padding-top: 181px; margin-left: 31px;">
+            <xhtml:div
+               style="box-sizing: border-box; font-size: 0; text-align: center; ">
+              <xhtml:div
+                 style="display: inline-block; font-size: 12px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; white-space: normal; word-wrap: normal; ">soft</xhtml:div>
+            </xhtml:div>
+          </xhtml:div>
+        </foreignObject>
+        <text
+           id="text30"
+           text-anchor="middle"
+           font-size="12px"
+           font-family="Helvetica"
+           fill="#000000"
+           y="185"
+           x="50">soft</text>
+      </switch>
+    </g>
+    <path
+       id="path36"
+       pointer-events="stroke"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="m 64.14,115.14 v 49.48" />
+    <path
+       id="path38"
+       pointer-events="all"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="m 60.64,158.74 3.5,7 3.5,-7" />
+    <path
+       id="path40"
+       pointer-events="stroke"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 36.03,166.69 V 117.55" />
+    <path
+       id="path42"
+       pointer-events="all"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="m 39.53,123.43 -3.5,-7 -3.5,7" />
+    <path
+       id="path44"
+       pointer-events="stroke"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="m 70,21 q 30,0 30,80 0,80 -27.76,80" />
+    <path
+       id="path46"
+       pointer-events="all"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="m 78.12,177.5 -7,3.5 7,3.5" />
+    <path
+       id="path48"
+       pointer-events="stroke"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="M 30,181 Q 0,181 0,101 0,21 27.76,21" />
+    <path
+       id="path50"
+       pointer-events="all"
+       stroke-miterlimit="10"
+       stroke="#000000"
+       fill="none"
+       d="m 21.88,24.5 7,-3.5 -7,-3.5" />
+  </g>
+  <switch
+     transform="translate(0,-0.5)"
+     id="switch60">
+    <g
+       id="g54"
+       requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" />
+    <a
+       id="a58"
+       target="_blank"
+       xlink:href="https://desk.draw.io/support/solutions/articles/16000042487"
+       transform="translate(0,-5)">
+      <text
+         id="text56"
+         y="100%"
+         x="50%"
+         font-size="10px"
+         text-anchor="middle">Viewer does not support full SVG 1.1</text>
+    </a>
+  </switch>
+</svg>
