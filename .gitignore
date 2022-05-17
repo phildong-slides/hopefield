@@ -10,6 +10,7 @@ tmp/**
 node_modules/
 .sass-cache
 dist/*.map
-python/media/*
+python/media/Tex
+python/media/texts
 python/__pycache__/*
 .vscode
